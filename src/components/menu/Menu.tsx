@@ -2,12 +2,30 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 import { ROUTES } from "../../constant/route.constant";
+import { AxiosError } from "axios";
+import { toast } from "react-toastify";
+import { Logout } from "../../services/auth.service";
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
+
+  const handleLogout = async () => {
+    try {
+      await Logout();
+      localStorage.clear();
+      window.location.href = ROUTES.login;
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.message);
+      } else {
+        console.error(error, "Error");
+        toast.error("Something went wrong");
+      }
+    }
+  };
 
   // Close menu on outside click
   useEffect(() => {
@@ -28,14 +46,7 @@ function Menu() {
       {isOpen && (
         <div className="menu-dropdown">
           <Link to={ROUTES.profile}>Profile</Link>
-          <button
-            onClick={() => {
-              localStorage.clear();
-              window.location.href = ROUTES.login;
-            }}
-          >
-            Logout
-          </button>
+          <button onClick={handleLogout}>Logout</button>
         </div>
       )}
     </div>
