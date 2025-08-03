@@ -1,0 +1,21 @@
+:root {
+  --logo-dark: #182a30;
+  --logo-light: #d7dadb;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+}
+
+.logo-bold {
+  color: var(--logo-dark);
+}
+
+.logo-light {
+  color: var(--logo-light);
+  margin-left: 2px;
+}

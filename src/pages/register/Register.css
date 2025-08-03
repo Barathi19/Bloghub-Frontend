@@ -1,0 +1,116 @@
+/* Login.css */
+
+:root {
+  --primary-bg: #eceff1;
+  --form-bg: #ffffff;
+  --primary-text: #263238;
+  --secondary-text: #607d8b;
+  --accent: #546e7a;
+  --highlight: #90a4ae;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.login-main-container {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-container {
+  background-color: var(--form-bg);
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-container h4 {
+  color: var(--primary-text);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-field {
+  text-align: left;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: var(--secondary-text);
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--highlight);
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.form-field textarea {
+  height: 10rem;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--highlight);
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+}
+
+button[type="submit"] {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #455a64;
+}
+
+.divider {
+  margin: 1.5rem 0;
+  height: 1px;
+  background-color: var(--highlight);
+  opacity: 0.3;
+}
+
+p {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+p a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}

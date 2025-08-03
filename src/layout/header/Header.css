@@ -1,0 +1,29 @@
+/* Header.css */
+
+:root {
+  --header-bg: #546e7a;
+  --text-color: #ffffff;
+  --hover-bg: #455a64;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.header > div {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
