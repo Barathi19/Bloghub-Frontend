@@ -19,7 +19,7 @@ function Menu() {
       window.location.href = ROUTES.login;
     } catch (error) {
       if (error instanceof AxiosError) {
-        toast.error(error.message);
+        toast.error(error.response?.data.message || error.message);
       } else {
         console.error(error, "Error");
         toast.error("Something went wrong");

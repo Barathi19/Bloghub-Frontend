@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { API_CONSTANT } from "../constant/api.contant";
 import { LOCAL_CONSTANT } from "../constant/app.constant";
 
@@ -15,6 +15,19 @@ apiInstance.interceptors.request.use(
     return config;
   },
   (error) => Promise.reject(error)
+);
+
+apiInstance.interceptors.response.use(
+  (response) => response,
+  (error: AxiosError) => {
+    // REDIRE TO LOGIN
+    if (error.status === 401 || error.response?.status === 401) {
+      localStorage.clear();
+      window.location.href = "/";
+    }
+
+    return Promise.reject(error);
+  }
 );
 
 export default apiInstance;
