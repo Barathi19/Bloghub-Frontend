@@ -25,7 +25,7 @@ function Register() {
       toast.success("Registered successfully");
     } catch (error) {
       if (error instanceof AxiosError) {
-        toast.error(error.response?.data.message || error.message);
+        toast.error(error.response?.data.error || error.message);
       } else {
         console.error(error);
         toast.error("Something went wrong");
